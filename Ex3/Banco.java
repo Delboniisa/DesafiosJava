@@ -1,42 +1,47 @@
 import java.util.Scanner;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Banco {
-    public static void main(String[] args) throws Exception {
-        
+    public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
-        List<ContaBancaria> contas = new ArrayList<ContaBancaria>();
-        int opcao=0;
+        int opcao;
+        String respostaUsuario;
 
-        System.out.println("-- Bem vindo--");
-        System.out.println("O que você deseja realizar?");
-        System.out.println("1. Depósito");
-        System.out.println("2. Saque");
-        System.out.println("3. Ver saldo");
-        System.out.println("4. Criar conta");
-        opcao = leitor.nextInt();
+        System.out.println("--- Sistema Bancário ---");
 
-        switch(opcao){
-            case 1: 
-            
-            break;
-            case 2:  
+        ContaBancaria conta = ContaBancaria.criarConta(leitor);
 
-            break;
-            case 3:
+        do {
+            ContaBancaria.exibirMenu();
+            opcao = leitor.nextInt();
+            leitor.nextLine();
 
-            break;
-            case 4: 
+            switch (opcao) {
+                case 1:
+                    System.out.println("Digite o valor para depositar: ");
+                    double valorDeposito = leitor.nextDouble();
 
-            break;
-            default:
-                System.out.println("Opção inválida!");
-            break;
-        }
+                    conta.deposito(valorDeposito);
+                    break;
+                case 2:
+                    System.out.println("Digite o valor para sacar: ");
+                    double valorSaque = leitor.nextDouble();
 
+                    conta.saque(valorSaque);
+                    break;
+                case 3:
+                    double saldoAtual = conta.getSaldo();
+                    System.out.println("Saldo atual da conta: R$" + saldoAtual);
+                    break;
+                default:
+                    System.out.println("Opção inválida.");
+            }
+
+            System.out.println("Deseja continuar (s/n)?");
+            leitor.nextLine();
+            respostaUsuario = leitor.nextLine();
+
+        } while (respostaUsuario.equals("s"));
 
         leitor.close();
     }
 }
-
