@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class MainAgenda {
-
     public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         Agenda agenda = new Agenda();
@@ -12,7 +11,7 @@ public class MainAgenda {
             System.out.println("2. Excluir contato");
             System.out.println("3. Procurar contato");
             int opcao = leitor.nextInt();
-            leitor.nextLine(); 
+            leitor.nextLine(); // Limpar o buffer
 
             switch (opcao) {
                 case 1:
@@ -30,4 +29,3 @@ public class MainAgenda {
         }
     }
 }
-
