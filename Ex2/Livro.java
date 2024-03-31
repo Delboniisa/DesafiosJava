@@ -11,9 +11,10 @@ class Livro {
     }
 
     public void ExibirInfo() {
-        System.out.println("-- Título: " + this.Titulo);
-        System.out.println("-- Autor: " + this.Nome);
-        System.out.println("-- Ano de Publicação: " + this.Ano);
-        System.out.println();
+        System.out.println("-----------------------");
+        System.out.println("Título: " + this.Titulo);
+        System.out.println("Autor: " + this.Nome);
+        System.out.println("Ano de Publicação: " + this.Ano);
+        System.out.println("-----------------------");
     }
 }

@@ -11,7 +11,7 @@ public class ContaBancaria {
         this.saldo = 0.0;
     }
 
-   public static ContaBancaria criarConta(Scanner leitor) {
+public static ContaBancaria criarConta(Scanner leitor) {
         System.out.println("Número da conta: ");
         int numeroConta = leitor.nextInt(); 
 
@@ -24,7 +24,7 @@ public class ContaBancaria {
     }
 
     public static void exibirMenu() {
-        System.out.println("\nMenu:");
+        System.out.println("Menu:");
         System.out.println("1. Depositar");
         System.out.println("2. Sacar");
         System.out.println("3. Consultar Saldo");
@@ -36,9 +36,12 @@ public class ContaBancaria {
         if (valorDeposito > 0) {
             saldo += valorDeposito;
 
-            System.out.println("Depósito de R$" + valorDeposito + ", foi realizado com sucesso!.");
+            System.out.println("Depósito de R$" + valorDeposito + ", foi realizado com sucesso!");
+
         } else {
-            System.out.println("Depósito inválido!");
+
+            System.out.println("Depósito inválido, tente novamente!");
+
         }
 
     }
@@ -49,10 +52,15 @@ public class ContaBancaria {
             saldo -= valorSaque;
 
             System.out.println("Saque de R$" + valorSaque + ", foi realizado com sucesso!");
+
         } else if ( valorSaque < saldo){
+
             System.out.println("Saldo insuficiente!");
+
         } else {
-            System.out.println("Saque inválido!");
+
+            System.out.println("Saque inválido, tente novamente!");
+
         }
     }
 

@@ -8,23 +8,25 @@ public class Biblioteca {
         
         Scanner leitor = new Scanner(System.in);
         String respostaUsuario;
+        int size = 0;
 
         List<Livro> estante = new ArrayList<>();
-        int size = 0;
 
         System.out.println("-- Bem Vindo(a) a Biblioteca! --");
         
         do {
             System.out.println("1. Adicionar livros:");
             System.out.println("2. Listar livros:");
+
             int opcao = leitor.nextInt();
-            leitor.nextLine(); 
+            leitor.nextLine(); //Limpar o buffer
 
             switch(opcao) {
                 case 1:
                     System.out.println("Deseja adicionar informações de quantos livros: ");
                     size = leitor.nextInt();
-                    leitor.nextLine();
+
+                    leitor.nextLine(); //Limpar buffer 
 
                     System.out.println("Insira as informações dos livros: ");
 
@@ -43,16 +45,21 @@ public class Biblioteca {
                         estante.add(livro);
                     }
                     break;
+
                 case 2:
                     for (Livro livro : estante) {
                         livro.ExibirInfo();
                     }
                     break;
             }
+
             System.out.println("Deseja continuar (s/n)?");
             respostaUsuario = leitor.nextLine();
+
         } while(respostaUsuario.equals("s"));
         
         leitor.close();
     }
+
+    
 }

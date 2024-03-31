@@ -33,7 +33,7 @@ public class Calculadora {
                     Operacoes.Divisao(valor1, valor2);
                     break;
                 default:
-                    System.out.println("Operação inválida");
+                    System.out.println("Operação inválida, tente novamente!");
                     break;
             }
 

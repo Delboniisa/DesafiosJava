@@ -18,8 +18,10 @@ public class Jogador {
     }
 
     public void exibirInformacoes() {
+        System.out.println("-----------------------");
         System.out.println("Nome: " + nome);
         System.out.println("Pontuação: " + pontuacao);
         System.out.println("Nível: " + nivel);
+        System.out.println("-----------------------");
     }
 }

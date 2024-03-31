@@ -16,16 +16,16 @@ public class Sistema{
             System.out.println("Nome do jogador:");
             String nome = leitor.nextLine();
 
-            System.out.println("Pontuação do jogador:");
+            System.out.println("Pontuação: ");
             int pontuacao = leitor.nextInt();
 
-            System.out.println("Nível do jogador:");
+            System.out.println("Nível: ");
             int nivel = leitor.nextInt();
 
             Jogador jogador = new Jogador(nome, pontuacao, nivel);
             jogadores.add(jogador);
 
-            System.out.println("Deseja cadastrar outro jogador? (s/n)");
+            System.out.println("Deseja cadastrar outro jogador? (s/n) ");
             leitor.nextLine();
             respostaUsuario = leitor.nextLine();
 
@@ -33,7 +33,8 @@ public class Sistema{
 
         System.out.println("\n--- Jogadores Cadastrados ---");
 
-        for (int i = 0; i < jogadores   .size()  ; i++) {
+        for (int i = 0; i < jogadores.size()  ; i++) {
+            
             Jogador jogador = jogadores.get(i);
             jogador.exibirInformacoes();
         }

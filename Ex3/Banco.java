@@ -2,18 +2,19 @@ import java.util.Scanner;
 
 public class Banco {
     public static void main(String[] args) {
+
         Scanner leitor = new Scanner(System.in);
         int opcao;
         String respostaUsuario;
 
-        System.out.println("--- Sistema Bancário ---");
+        System.out.println("--- Banco ---");
 
         ContaBancaria conta = ContaBancaria.criarConta(leitor);
 
         do {
             ContaBancaria.exibirMenu();
             opcao = leitor.nextInt();
-            leitor.nextLine();
+            leitor.nextLine(); //Limpar buffer
 
             switch (opcao) {
                 case 1:
